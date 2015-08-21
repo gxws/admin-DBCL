@@ -1,0 +1,26 @@
+div#sidebar.sidebar.responsive
+  //<script type="text/javascript">try{ace.settings.check('sidebar' , 'fixed')}catch(e){}</script>
+  ul.nav.nav-list
+    - var menus = [{parent:'订单和异常记录',sub:['开通业务订单记录','计次点播订单记录','一次性消费订单记录']},{parent:'异常记录'},{parent:'接入管理',sub:['sp信息管理','新增/编辑sp信息','sp详情']},{parent:'对账',sub:['设置对账单发送地址','对账单发送记录']}]
+    - for menu in menus
+        li(class="")
+          a.dropdown-toggle(href="javascript:;")
+            i.menu-icon.fa.fa-desktop
+            span.menu-text= menu.parent
+            - if(menu.sub!=(null||undefined))
+                b(class="arrow fa fa-angle-down")
+          b.arrow
+          - if(menu.sub!=(null||undefined))
+            ul.submenu
+              - for sub in menu.sub
+                li(class="")
+                  a(href="#")
+                    i(class="menu-icon fa fa-caret-right")
+                    = sub
+                  b.arrow
+  ///.nav-list
+  //#section:basics/sidebar.layout.minimize
+  div#sidebar-collapse.sidebar-toggle.sidebar-collapse
+    i.ace-icon.fa.fa-angle-double-left(data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right")
+  ///section:basics/sidebar.layout.minimize
+  //<script type="text/javascript">try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}</script>

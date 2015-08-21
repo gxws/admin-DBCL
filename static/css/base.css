@@ -1,0 +1,145 @@
+/*!
+ * DBCL
+ * base
+ * create: 2015/08/01
+ */
+/* public */
+/* font */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("http://test.manage.gxwsxx.com/static/plugins/ace/assets/fonts/fontawesome-webfont.eot?v=4.1.0");
+  src: url("http://test.manage.gxwsxx.com/static/plugins/ace/assets/fonts/fontawesome-webfont.eot?#iefix&v=4.1.0") format("embedded-opentype"), url("http://test.manage.gxwsxx.com/static/plugins/ace/assets/fonts/fontawesome-webfont.woff?v=4.1.0") format("woff"), url("http://test.manage.gxwsxx.com/static/plugins/ace/assets/fonts/fontawesome-webfont.ttf?v=4.1.0") format("truetype"), url("http://test.manage.gxwsxx.com/static/plugins/ace/assets/fonts/fontawesome-webfont.svg?v=4.1.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url(http://test.manage.gxwsxx.com/static/plugins/ace/assets/fonts/glyphicons-halflings-regular.eot);
+  src: url(http://test.manage.gxwsxx.com/static/plugins/ace/assets/fonts/glyphicons-halflings-regular.eot?#iefix) format("embedded-opentype"), url(http://test.manage.gxwsxx.com/static/plugins/ace/assets/fonts/glyphicons-halflings-regular.woff) format("woff"), url(http://test.manage.gxwsxx.com/static/plugins/ace/assets/fonts/glyphicons-halflings-regular.ttf) format("truetype"), url(http://test.manage.gxwsxx.com/static/plugins/ace/assets/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format("svg");
+}
+/* ace */
+.page-content {
+  padding-top: 20px;
+}
+
+.btn:not(.ace-settings-btn) {
+  min-width: 97px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 10px;
+}
+
+.form-actions {
+  padding: 9px 10px 0;
+}
+.form-actions .no_line {
+  margin-top: -10px;
+  border: 0;
+  padding-bottom: 10px;
+}
+.form-actions .rw {
+  padding-bottom: 10px;
+}
+.form-actions .rw .btn-sm {
+  border-width: 1px;
+}
+.form-actions.title {
+  padding: 5px 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+.user-info {
+  line-height: 34px;
+}
+
+.ds_tb {
+  display: table-cell;
+  background: none;
+  padding: 6px 12px;
+  text-align: center;
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.ml-22 {
+  margin-left: -22px;
+}
+
+.ml-1 {
+  margin-left: -1px;
+}
+
+.width-15 {
+  width: 15%;
+}
+
+.title-line {
+  border-bottom: 1px solid #ccc;
+  margin-top: 0;
+  padding-bottom: 5px;
+}
+
+.hr.dashed {
+  border-top: 1px dashed #ccc;
+}
+.hr.bold {
+  border-top: 2px solid #ccc;
+}
+
+.pagination > li > span {
+  border-width: 0 0 0 1px;
+  margin-left: 0;
+  color: #000;
+}
+.pagination > li > span:focus, .pagination > li > span:hover {
+  background: none;
+  border-color: none;
+  color: #000;
+}
+.pagination > li > span.no-border {
+  border-width: 0;
+}
+
+.login-container h1 {
+  font-size: 32px;
+}
+
+.action-buttons a {
+  margin: 0 5px;
+}
+
+/* prompt */
+.prompt {
+  min-width: 260px;
+  padding: 0 20px;
+  height: 24px;
+  line-height: 24px;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  margin-left: -150px;
+  z-index: 999999999;
+  text-align: center;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 3px 3px;
+  display: none;
+}
+.prompt.success {
+  background: #629b58;
+}
+.prompt.warning {
+  background: #e59729;
+}
+.prompt.fail {
+  background: #b74635;
+}
+
+/* dd */
+.dd-dragel {
+  z-index: 1060;
+}
+
+/*# sourceMappingURL=base.css.map */

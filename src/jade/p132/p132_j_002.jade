@@ -1,0 +1,77 @@
+extends ../public/_layout
+block title
+  title 新增/编辑sp信息-接入管理-点播齿轮
+block styleplugins
+block container
+  form.form-horizontal(action="" method="get")
+    .col-sm-12
+      div(class="form-actions title")
+        b 基本信息
+       .form-group
+        label(for="" class="control-label no-padding-right col-sm-3")
+          span.red *
+          | 产品来源：
+        .col-sm-5
+          input(type="text" class="width-100 J_input_verify" readonly="readonly")
+      .hr.dashed
+      .form-group
+        label(for="" class="control-label no-padding-right col-sm-3")
+          span.red *
+          | 应用名称：
+        .col-sm-5
+          input(type="text" class="width-100 J_input_verify J_input" required data-info="应用名称" maxlength="40")
+        div(class="help-block col-sm-reset inline")
+          | 还能输入
+          span.red 40
+          | 个字符
+      .hr.dashed
+      .form-group
+        label(for="" class="control-label no-padding-right col-sm-3")
+          span.red *
+          | 开发者名称：
+        .col-sm-5
+          input(type="text" class="width-100 J_input_verify J_input" required data-info="开发者名称" maxlength="100")
+        div(class="help-block col-sm-reset inline")
+          | 还能输入
+          span.red 100
+          | 个字符
+      .hr.dashed
+      .form-group
+        label(for="" class="control-label no-padding-right col-sm-3") 状态：
+        .col-sm-5
+          .control-group
+            .radio.pull-left
+              label.no-padding-left
+                input(name="form-field-radio" type="radio" class="ace" checked="checked")
+                span.lbl 启用
+            .radio.pull-left
+              label
+                input(name="form-field-radio" type="radio" class="ace")
+                span.lbl 禁用
+      .hr.dashed
+      .form-group
+        label(for="" class="control-label no-padding-right col-sm-3")
+          | 联系电话：
+        .col-sm-5
+          input(type="text" class="width-100 J_input_ct" pattern="^([0-9]{11})$" required data-info="11位数字手机号码" maxlength="11")
+      .hr.dashed
+      .form-group
+        label(for="" class="control-label no-padding-right col-sm-3")
+          | 联系邮箱：
+        .col-sm-5
+          input(type="text" class="width-100 J_input_ct" pattern="^([0-9a-zA-Z]{1,}[-_.]?[0-9a-zA-Z]{1,}?\@[0-9a-zA-Z]{1,}\.[a-zA-Z]{2,4})$" required data-info="正确的邮箱")
+      .hr.bold
+      div(class="form-actions title mt20")
+        b 签名信息设置
+      .form-group
+        label(for="" class="control-label no-padding-right col-sm-3")
+          span.red *
+          | 签名key值：
+        .col-sm-5
+          input(type="text" class="width-100 J_input_verify J_input" required data-info="签名key值" value="1111")
+      .hr.bold
+    .col-sm-12.no-padding
+      div(class="col-sm-9 mt10 col-sm-offset-3")
+        a(href="#" class="btn btn-sm mr20") 返回
+        button(type="submit" class="btn btn-sm btn-info") 确定
+block scriptplugins

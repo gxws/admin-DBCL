@@ -1,0 +1,56 @@
+div.col-sm-12
+  //PAGE CONTENT BEGINS
+  div(class="title-line clearfix")
+    span.h1 Title
+    a(href="#" class="btn btn-xs btn-info pull-right no-margin-right") 导出当前记录
+form.form-horizontal(action="" method="get")
+  div.col-sm-12
+    div(class="clearfix form-actions no-margin-bottom")
+      div.rw.no-padding
+        - var status = ['全部状态','待开通','处理中','开通成功','开通失败']
+        - each sta in status
+          - if(status.indexOf(sta)==0)
+            a(href="#" class="btn btn-sm btn-info J_subBtn")= sta
+          - else
+            a(href="#" class="btn btn-sm btn-white btn-info J_subBtn")= sta
+      div.hr
+      div(class="col-sm-3 pb10 no-padding-left")
+        div.input-group
+          span.input-group-addon
+            i.fa.fa-calendar
+          input(type="text" class="form-control J_date-pick" name="start" placeholder="选择时间")
+      div(class="col-sm-6 pull-right no-padding")
+        div(class="input-icon pull-left")
+          select(name="" id="" class="form-control J_select")
+            - var select = ['订单编号','机顶盒号','订单名称']
+            - each sel in select
+              option(value="")= sel
+        div.input-group
+          input(type="text" class="form-control search-query" placeholder="输入订单编号")
+          span.input-group-btn
+            button(class="btn btn-info btn-sm no-margin-right J_search_btn")
+              | 查询
+              i(class="ace-icon fa fa-search icon-on-right")
+      div(class="col-sm-12 no-padding-left green pb10 fs16")
+        b
+          |充值成功金额合计：
+          span.orange 6000.00
+          |元
+  div.col-sm-12
+    table(class="table table-striped table-hover")
+      - var names =['订单编号','机顶盒号','订单名称','订单描述','开通数量（个月）','状态','创建时间']
+      thead
+        tr
+          - each name in names
+              th.text-center= name
+      tbody.text-center
+        tr
+          td
+            a(href="#") 00000000AK
+          td 123456789
+          td {产品来源}{产品名称}
+          td {产品描述}
+          td 4
+          td 待开通
+          td 14-02-24 16:22:20
+  include _page

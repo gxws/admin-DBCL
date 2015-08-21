@@ -1,0 +1,36 @@
+div.col-sm-12
+  ul.pagination.J_pagination
+    li.disabled
+      a(href="#" pageno="prev")
+        i(class="ace-icon fa fa-angle-double-left")
+        | 上一页
+    li.active
+      a(href="#" pageno="1") 1
+    li
+      a(href="#" pageno="2") 2
+    li
+      a(href="#" pageno="3") 3
+    li
+      a(href="#" pageno="4") 4
+    li
+      a(href="#" pageno="5") 5
+    li
+      span ...
+    li
+      a(href="#" pageno="next")
+        i(class="ace-icon fa fa-angle-double-right")
+        | 下一页
+    li
+      span 16051条记录
+    li
+      span.no-border
+        | 1/
+        em.J_pgmax 536
+        | 页跳到
+    li
+      input(type="text" class="col-xs-1 J_jupnb" name="pageNO")
+    li
+      span.no-border 页
+    li
+      button(type="submint" class="btn btn-sm btn-info J_jump")
+        span 确定

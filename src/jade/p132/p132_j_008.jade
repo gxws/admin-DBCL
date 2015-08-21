@@ -1,0 +1,23 @@
+extends ../public/_layout
+block title
+  title 异常记录详情-点播齿轮
+block styleplugins
+block container
+  div.col-sm-12
+    - var datas = [{title:'异常信息',names:['异常编号：','异常状态：','异常创建时间：','处理失败原因：','处理人：']},{title:'异常订单信息',names:['订单编号：','订单名称：','类型：','产品来源','付款金额：','订单创建时间：','失败原因：']},{title:'用户信息',names:['机顶盒号：','用户编号：','用户区域码：','机顶盒类型：']}]
+    - for data in datas
+        table(class="table table-bordered mt20")
+          thead
+            tr.active
+              th(colspan="2")= data.title
+          tbody
+            - for name in data.names
+              tr
+                td(class="text-right info width-15")= name
+                - if(datas.indexOf(data)==0 && data.names.indexOf(name)==4)
+                  td
+                    p= '{' + name + '}'
+                - else
+                  td= '{' + name + '}'
+    a(href="javascript:;" class="btn btn-sm mr20") 返回
+block scriptplugins

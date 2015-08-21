@@ -1,0 +1,41 @@
+div#navbar.navbar.navbar-default
+  //<script type="text/javascript">try{ace.settings.check('navbar' , 'fixed')}catch(e){}</script>
+  div#navbar-container.navbar-container
+    //#section:basics/sidebar.mobile.toggle 手机版导航菜单
+    button#menu-toggler.navbar-toggle.menu-toggler.pull-left(type="button")
+      span.sr-only Toggle sidebar
+    - for(var i=0;i<3;i++){
+        span.icon-bar
+    - }
+    ///section:basics/sidebar.mobile.toggle
+    div.navbar-header.pull-left
+      a.navbar-brand(href="#")
+        small
+          //<i class="fa fa-leaf">
+          | 点播齿轮 | 后台管理系统
+
+  //#section:basics/navbar.dropdown
+  div.navbar-buttons.navbar-header.pull-right(role="navigation")
+    ul.nav.ace-nav
+      //#section:basics/navbar.user_menu 用户信息
+      li.light-blue
+        a.dropdown-toggle(data-toggle="dropdown" href="#")
+          <img class="nav-user-photo" src="static/images/user.jpg" alt="管理员名字" />
+          span.user-info 管理员
+          i.ace-icon.fa.fa-caret-down
+        ul.user-menu.dropdown-menu-right.dropdown-menu.dropdown-yellow.dropdown-caret.dropdown-close
+          li
+            a
+              i.ace-icon.fa.fa-user
+              | 权限组：管理员
+          li
+            a(href="#")
+              i.ace-icon.fa.fa-cog
+              | 修改密码
+          li.divider
+          li
+            a(href="#")
+              i.ace-icon.fa.fa-power-off
+              | 退出
+      ///section:basics/navbar.user_menu
+  ///section:basics/navbar.dropdown

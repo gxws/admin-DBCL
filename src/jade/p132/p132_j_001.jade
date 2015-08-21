@@ -1,0 +1,56 @@
+extends ../public/_layout
+block title
+  title sp信息管理-接入管理-点播齿轮
+block exportbtn
+  a(href="#" class="btn btn-xs btn-info pull-right no-margin-right") 新增SP信息
+block container
+  form.form-horizontal(action="" method="get")
+    .col-sm-12
+      div(class="clearfix form-actions no-margin-bottom")
+        div.rw.no-padding
+          - var status = ['全部状态','启用','禁用']
+          - each sta in status
+            - if(status.indexOf(sta)==0)
+              a(href="#" class="btn btn-sm btn-info J_subBtn")= sta
+            - else
+              a(href="#" class="btn btn-sm btn-white btn-info J_subBtn")= sta
+        .hr
+        div(class="col-sm-4 pb10 no-padding-left")
+          div.input-daterange.input-group
+            input(type="text" class="form-control J_date-pick" name="start" placeholder="选择开始时间")
+            span.input-group-addon.green
+              i.fa.fa-exchange
+            input(type="text" class="form-control J_date-pick" name="end" placeholder="选择结束时间")
+        div(class="col-sm-5 pull-right no-padding")
+          div(class="input-icon pull-left")
+            select(name="" id="" class="form-control J_select")
+              - each sel in ['开发者编号','开发者名称']
+                option(value="")= sel
+          div.input-group
+            input(type="text" class="form-control search-query" placeholder="输入开发者编号")
+            span.input-group-btn
+              button(class="btn btn-info btn-sm no-margin-right J_search_btn")
+                | 查询
+                i(class="ace-icon fa fa-search icon-on-right")
+    .col-sm-12
+      table(class="table table-striped table-hover")
+        thead
+          tr
+            - each name in ['应用编号','应用名称','产品来源','开发者名称','状态','创建时间','操作']
+              th.text-center= name
+        tbody
+          tr
+            td
+              a(href="#") 123456789
+            td 电视营业厅
+            td 00
+            td 广西广电网络
+            td.text-center 启用
+            td.text-center 14-02-24 16:22:20
+            td.text-center
+              div.action-buttons.bigger-130
+                a(href="javascript:;" data-ajax="javascript:;" class="blue" data-rel="tooltip" title="编辑SP信息")
+                  i(class="ace-icon fa fa-pencil-square-o")
+                a(href="javascript:;" data-ajax="javascript:;" class="red J_delete" data-rel="tooltip" title="删除SP信息记录" data-info="SP信息")
+                  i(class="ace-icon fa fa-trash-o")
+    include ../public/_page

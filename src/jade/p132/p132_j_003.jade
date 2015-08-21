@@ -1,0 +1,19 @@
+extends ../public/_layout
+block title
+  title sp详情-接入管理-点播齿轮
+block styleplugins
+block container
+  div.col-sm-12
+    - var datas = [{title:'基本信息',names:['应用编号：','应用名称：','开发者名称：','状态：','联系电话：','联系邮箱：','创建时间：']},{title:'签名信息',names:['产品来源：','签名key值：']}]
+    - for data in datas
+      table(class="table table-bordered mt20")
+        thead
+          tr.active
+            th(colspan="2")= data.title
+        tbody
+          - for name in data.names
+            tr
+              td(class="text-right info width-15")= name
+              td= '{' + name + '}'
+    a(href="#" class="btn btn-sm mr20") 返回
+block scriptplugins

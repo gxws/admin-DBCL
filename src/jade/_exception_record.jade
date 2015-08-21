@@ -1,0 +1,66 @@
+div.col-sm-12
+  //PAGE CONTENT BEGINS
+  div(class="title-line clearfix")
+    span.h1 Title
+    a(href="#" class="btn btn-xs btn-info pull-right no-margin-right") 导出当前记录
+form.form-horizontal(action="" method="get")
+  div.col-sm-12
+    div(class="clearfix form-actions no-margin-bottom")
+      - var datas = [{active:'全部状态',nom:['待开通','处理中','开通成功','开通失败']},{active:'全部类型',nom:['业务开通','计次点播','一次性消费']}]
+      - for data in datas
+        div.rw
+          - if(datas.indexOf(data)==0)
+            a(href="#" class="btn btn-sm btn-info J_subBtn")= data.active
+            - for no in data.nom
+              a(href="#" class="btn btn-sm btn-white btn-info J_subBtn")= no
+          - else
+            a(href="#" class="btn btn-sm btn-success J_subBtn")= data.active
+            - for no in data.nom
+              a(href="#" class="btn btn-sm btn-white btn-success J_subBtn")= no
+      div(class="col-sm-3 pb10 no-padding-left")
+        div.input-group
+          span.input-group-addon
+            i.fa.fa-calendar
+          input(type="text" class="form-control J_date-pick" name="start" placeholder="选择时间")
+      div(class="col-sm-6 pull-right no-padding")
+        div(class="input-icon pull-left")
+          select(name="" id="" class="form-control J_select")
+            - var select = ['订单编号','机顶盒号','订单名称']
+            - each sel in select
+              option(value="")= sel
+        div.input-group
+          input(type="text" class="form-control search-query" placeholder="输入订单编号")
+          span.input-group-btn
+            button(class="btn btn-info btn-sm no-margin-right J_search_btn")
+              | 查询
+              i(class="ace-icon fa fa-search icon-on-right")
+      div(class="col-sm-12 no-padding-left green pb10 fs16")
+        b
+          |充值成功金额合计：
+          span.orange 6000.00
+          |元
+  div.col-sm-12
+    table(class="table table-striped table-hover")
+      - var names =['异常编号','订单编号','机顶盒号','订单名称','订单金额（元）','类型','状态','创建时间','操作']
+      thead
+        tr
+          - each name in names
+              th.text-center= name
+      tbody.text-center
+        tr
+          td
+            a(href="#") 123456789
+          td
+            a(href="#") 00000000AK
+          td 123456789
+          td {订单名称}
+          td.text-right 0.00
+          td 业务开通
+          td 待处理
+          td 14-02-24 16:22:20
+          td
+            div.action-buttons.bigger-130
+              a(href="javascript:;" data-ajax="javascript:;" class="orange J_operation" data-rel="tooltip" title="手动操作")
+                i(class="ace-icon fa fa-frown-o")
+
+  include _page
