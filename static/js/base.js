@@ -72,7 +72,6 @@
 			if(isNaN(pageNo)) {
 				alert('请输入有效的数字！');
 				return;
-<<<<<<< HEAD
 			}
 			if(pageNo * 1 < 1) {
 				pageNo = 1;
@@ -89,28 +88,6 @@
 			}
 		})
 		
-=======
-			}
-			if(pageNo * 1 < 1) {
-				pageNo = 1;
-			}else if(pageNo * 1 > pageTotal * 1) {
-				pageNo = pageTotal;
-			}
-			if($form && $form.length == 1) {
-				if($pageNo.length < 1) {
-					$pageNo = $('<input type="hidden" name="pageNo"/>');
-					$form.append($pageNo);
-				}
-				$pageNo.val(pageNo);
-				$form.submit();
-			}
-		});
-		$('.J_login_input').size() && $('.J_login_input').each(function(){//ajax验证用户名和密码
-			$(this).on('input',function(){
-				base.verify(this,base.Login(this));
-			});
-		})
->>>>>>> 1eb90b52cfdf254fe03449e5b9eced3de39ef0e9
 		// .on('click','.J_pagination li a,.J_jump',function(){//分页
 		// 	var $this = $(this),
 		// 			$par = $this.parent(),
