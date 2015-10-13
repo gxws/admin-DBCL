@@ -49,6 +49,11 @@
 			'no_file':'未选择文件，只支持git、png、jpg格式',
 			'btn_choose': '选择',
 			'btn_change': '修改',
+			'before_change': null,
+			before_remove: function(){
+				this.defaultValue = '';
+				return true;
+			},
 			'allowExt': ['gif','png','jpg']
 		}).each(function(){
 			var $this = $(this),
