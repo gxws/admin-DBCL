@@ -50,6 +50,10 @@
 			'btn_choose': '选择',
 			'btn_change': '修改',
 			'allowExt': ['gif','png','jpg']
+		}).each(function(){
+			var $this = $(this),
+					value = this.defaultValue;
+			value && $this.next('span').addClass('selected').attr('data-title','修改').find('span').attr('data-title',value).find('i').removeClass('fa-upload').addClass('fa-picture-o file-image')
 		});
 		$doc.on('change','.J_select',function(){//下拉选择查询
 			var $this = $(this),
