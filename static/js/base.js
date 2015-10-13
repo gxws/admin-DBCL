@@ -45,6 +45,12 @@
       secondStep: 30,
       inputMask: true
 		});
+		$('input[type=file]').ace_file_input('update_settings',{//初始化input type=file设置
+			'no_file':'未选择文件，只支持git、png、jpg格式',
+			'btn_choose': '选择',
+			'btn_change': '修改',
+			'allowExt': ['gif','png','jpg']
+		});
 		$doc.on('change','.J_select',function(){//下拉选择查询
 			var $this = $(this),
 					selectedValue = $this.val(),
@@ -57,22 +63,48 @@
 			$text.val($(this).attr('data-status'));
 			$btn.parents('form').submit();
 			return false;
-		}).on('click','.J_pagination li a,.J_jump',function(){//分页
+		}).on('click', '.J_w_pages li:not([class=disabled]), .J_w_page', function(){ //分页
 			var $this = $(this),
-					$par = $this.parent(),
-					tag = $par.hasClass('disabled') || $par.hasClass('active') || $this.hasClass('J_jump'),
-			    $form = $this.parents('form'),
-			    max = $('.J_pgmax').text()*1,
-			    $input = $('.J_jupnb');
-			if(!tag){
-			 	$input.val($this.attr('pageNo'));
-			 	$form.submit();
-			}else if($this.hasClass('J_jump')){
-		 		var val = $input.val();
-		 		if(val=='')return false;
-		 		val!='' ? $input[0].setCustomValidity( isNaN(val) ? '请输入正确页码' : '') : val>max ? val = max : val<1 ? 1 : false;
+			$form = $('form'),
+			$pageNo = $form.find('[name=pageNo]'),
+			pageNo = $this.find('a').attr('pageNo') || $this.parent().prev('input').val(),
+			pageTotal = $('.J_w_pages').attr('pageTotal');
+			if(isNaN(pageNo)) {
+				alert('请输入有效的数字！');
+				return;
 			}
-		}).on('input','.J_input',function(){
+			if(pageNo * 1 < 1) {
+				pageNo = 1;
+			}else if(pageNo * 1 > pageTotal * 1) {
+				pageNo = pageTotal;
+			}
+			if($form && $form.length == 1) {
+				if($pageNo.length < 1) {
+					$pageNo = $('<input type="hidden" name="pageNo"/>');
+					$form.append($pageNo);
+				}
+				$pageNo.val(pageNo);
+				$form.submit();
+			}
+		})
+		
+		// .on('click','.J_pagination li a,.J_jump',function(){//分页
+		// 	var $this = $(this),
+		// 			$par = $this.parent(),
+		// 			tag = $par.hasClass('disabled') || $par.hasClass('active') || $this.hasClass('J_jump'),
+		// 	    $form = $this.parents('form'),
+		// 	    max = $('.J_pgmax').text()*1,
+		// 	    $input = $('.J_jupnb');
+		// 	if(!tag){
+		// 	 	$input.val($this.attr('pageNo'));
+		// 	 	$form.submit();
+		// 	}else if($this.hasClass('J_jump')){
+		//  		var val = $input.val();
+		//  		if(val=='')return false;
+		//  		val!='' ? $input[0].setCustomValidity( isNaN(val) ? '请输入正确页码' : '') : val>max ? val = max : val<1 ? 1 : false;
+		// 	}
+		// })
+		.on('input','.J_input',function(){
 			var $this = $(this),
 					len = $this.val().length,
 					$span = $this.parent('div').next('div.help-block').find('span'),
@@ -80,6 +112,13 @@
 			if(len > max) return false;
 			$span.text(max - len);
 		});
+
+		$('.J_login_input').size() && $('.J_login_input').each(function(){//ajax验证用户名和密码
+			$(this).on('input',function(){
+				base.verify(this,base.Login(this));
+			});
+		});
+
 		if($('.J_input_verify').size()){//初始化设置为空验证提示信息,data-info属性定义信息
 			var $input = $('.J_input_verify'),
 					len = $input.size();
