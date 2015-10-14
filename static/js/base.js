@@ -58,7 +58,28 @@
 		}).each(function(){
 			var $this = $(this),
 					value = this.defaultValue;
-			value && $this.next('span').addClass('selected').attr('data-title','修改').find('span').attr('data-title',value).find('i').removeClass('fa-upload').addClass('fa-picture-o file-image')
+			if(value){
+				$this.parents('.ace-file-input').append('<img style="display:none;position:absolute;z-index:19;left:0;top:0;" src="' + value + '" width="252" height="162" />')
+				$this.next('span').addClass('selected').attr('data-title','修改').find('span').attr('data-title',value).find('i').removeClass('fa-upload').addClass('fa-picture-o file-image').parents('.ace-file-input').hover(function(){$(this).find('img').show();},function(){$(this).find('img').hide();}).find('a.remove').on('click', function(){
+							$(this).next('img').remove();
+						});
+			}
+			
+				$this.on('change', function(){
+					$this.nextAll('img').remove();
+					var oFile = this.files[0],
+							reader = new FileReader();
+					reader.readAsDataURL(oFile);
+					reader.onload = function(){
+						var oImg = new Image();
+						oImg.src = this.result;
+						$this.parents('.ace-file-input').append('<img style="display:none;position:absolute;z-index:19;left:0;top:0;" src="' + this.result + '" width="252" height="162" />');
+						$this.next('span').addClass('selected').attr('data-title','修改').find('span').attr('data-title',this.result).find('i').removeClass('fa-upload').addClass('fa-picture-o file-image').parents('.ace-file-input').hover(function(){$(this).find('img').show();},function(){$(this).find('img').hide();}).find('a.remove').on('click', function(){
+							$(this).next('img').remove();
+						});
+					}
+				});
+			
 		});
 		$doc.on('change','.J_select',function(){//下拉选择查询
 			var $this = $(this),
