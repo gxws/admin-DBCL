@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta charset="utf-8" />
+		<title>首页-聚乐付</title>
+		<meta name="Author" content="jiqingjian" />
+		<meta name="Keywords" content="jiqingjian" />
+		<meta name="Description" content="jiqingjian" />
+		<meta name="viewport" content="width=device-width,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<meta name="format-detection" content="telephone=no" />
+		<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" /> -->
+		<link rel="stylesheet" href="../static/plugins/ace/assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="../static/plugins/ace/assets/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="../static/plugins/ace/assets/css/ace.min.css" id="main-ace-style" />
+		<link rel="stylesheet" href="../static/public/css/public.css" />
+		<link rel="stylesheet" href="../static/LezCashier/css/base.css" />
+		<link rel="stylesheet" href="../static/LezCashier/css/index.css" />
+		<!-- <link rel="stylesheet" href="http://10.1.15.50:8000/static/LezCashier/css/index.mod.css"> -->
+	</head>
+
+	<body class="no-skin">
+		<!-- #section:basics/navbar.layout -->
+		<div id="navbar" class="navbar navbar-default">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
+			<div class="navbar-container" id="navbar-container">
+				<!-- #section:basics/sidebar.mobile.toggle 手机版导航菜单-->
+				<button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
+					<span class="sr-only">Toggle sidebar</span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+
+					<span class="icon-bar"></span>
+				</button>
+
+				<!-- /section:basics/sidebar.mobile.toggle -->
+				<div class="navbar-header pull-left">
+					<!-- #section:basics/navbar.layout.brand -->
+					<a href="#" class="navbar-brand">
+						<small>
+							<!-- <i class="fa fa-leaf"></i> -->
+							|后台管理系统
+						</small>
+					</a>
+				</div>
+				<!-- #section:basics/navbar.dropdown -->
+				<div class="navbar-buttons navbar-header pull-right" role="navigation">
+					<ul class="nav ace-nav">
+						<!-- #section:basics/navbar.user_menu 用户信息-->
+						<li class="light-blue">
+							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
+								<!-- <img class="nav-user-photo" src="../assets/avatars/user.jpg" alt="Jason's Photo" /> -->
+								<span class="user-info">
+									<small>Welcome,</small>
+									管理员
+								</span>
+
+								<i class="ace-icon fa fa-caret-down"></i>
+							</a>
+
+							<ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-cog"></i>
+										Settings
+									</a>
+								</li>
+
+								<li>
+									<a href="profile.html">
+										<i class="ace-icon fa fa-user"></i>
+										Profile
+									</a>
+								</li>
+
+								<li class="divider"></li>
+
+								<li>
+									<a href="#">
+										<i class="ace-icon fa fa-power-off"></i>
+										Logout
+									</a>
+								</li>
+							</ul>
+						</li>
+
+						<!-- /section:basics/navbar.user_menu -->
+					</ul>
+				</div>
+
+				<!-- /section:basics/navbar.dropdown -->
+			</div><!-- /.navbar-container -->
+		</div>
+
+		<!-- /section:basics/navbar.layout -->
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<!-- #section:basics/sidebar -->
+			<div id="sidebar" class="sidebar responsive">
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+				</script>
+
+				<ul class="nav nav-list">
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text">运营系统</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+									支付渠道管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="#">
+									<i class="menu-icon fa fa-caret-right"></i>
+									商户管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="#">
+									<i class="menu-icon fa fa-caret-right"></i>
+									支付单查询
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="#">
+									<i class="menu-icon fa fa-caret-right"></i>
+									支付记录
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="#">
+									<i class="menu-icon fa fa-caret-right"></i>
+									退款查询
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					<li class="active open">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text">财务系统</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+						<b class="arrow"></b>
+						<ul class="submenu">
+							<li class="active open">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+									支付单统计
+									<b class="arrow fa fa-angle-down"></b>
+								</a>
+								<ul class="submenu">
+									<li class="active">
+										<a href="#" class="dropdown-toggle">
+											<i class="menu-icon fa fa-caret-right"></i>
+											按订单金额统计
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+									<li class="">
+										<a href="#" class="dropdown-toggle">
+											<i class="menu-icon fa fa-caret-right"></i>按商户应结算金额统计
+										</a>
+
+										<b class="arrow"></b>
+									</li>
+								</ul>
+								<b class="arrow"></b>
+								
+							</li>
+							<li class="">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+									手续费记录
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="#">
+									<i class="menu-icon fa fa-caret-right"></i>
+									商户收支记录
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="#">
+									<i class="menu-icon fa fa-caret-right"></i>
+									结算记录
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="#">
+									<i class="menu-icon fa fa-caret-right"></i>
+									下载对账单
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							<li class="">
+								<a href="#">
+									<i class="menu-icon fa fa-caret-right"></i>
+									差错管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text">客服系统</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+									下单用户查询
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="#">
+									<i class="menu-icon fa fa-caret-right"></i>
+									回访管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+					<li class="">
+						<a href="#" class="dropdown-toggle">
+							<i class="menu-icon fa fa-desktop"></i>
+							<span class="menu-text">系统管理</span>
+
+							<b class="arrow fa fa-angle-down"></b>
+						</a>
+
+						<b class="arrow"></b>
+
+						<ul class="submenu">
+							<li class="">
+								<a href="#" class="dropdown-toggle">
+									<i class="menu-icon fa fa-caret-right"></i>
+									管理员管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+
+							<li class="">
+								<a href="#">
+									<i class="menu-icon fa fa-caret-right"></i>
+									菜单管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+							
+							<li class="">
+								<a href="#">
+									<i class="menu-icon fa fa-caret-right"></i>
+									日志管理
+								</a>
+
+								<b class="arrow"></b>
+							</li>
+						</ul>
+					</li>
+				</ul><!-- /.nav-list -->
+
+				<!-- #section:basics/sidebar.layout.minimize -->
+				<div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+					<i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+				</div>
+
+				<!-- /section:basics/sidebar.layout.minimize -->
+				<script type="text/javascript">
+					try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+				</script>
+			</div>
+
+			<!-- /section:basics/sidebar -->
+			<div class="main-content">
+				<!-- #section:basics/content.breadcrumbs -->
+				<div class="breadcrumbs" id="breadcrumbs">
+					<script type="text/javascript">
+						try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+					</script>
+
+					<ul class="breadcrumb">
+						<li>
+							<i class="ace-icon fa fa-home home-icon"></i>
+							<a href="#">首页</a>
+						</li>
+
+						<li>
+							<a href="#">系统</a>
+						</li>
+						<li>
+							<a href="#">分类</a>
+						</li>
+						<li class="active">当前页</li>
+					</ul><!-- /.breadcrumb -->
+
+				</div>
+
+				<!-- /section:basics/content.breadcrumbs -->
+				<div class="page-content">
+					<!-- #section:settings.box -->
+					<div class="ace-settings-container" id="ace-settings-container">
+						<div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+							<i class="ace-icon fa fa-cog bigger-150"></i>
+						</div>
+
+						<div class="ace-settings-box clearfix" id="ace-settings-box">
+							<div class="pull-left width-50">
+								<!-- #section:settings.navbar -->
+								<div class="ace-settings-item">
+									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
+									<label class="lbl" for="ace-settings-navbar"> 冻结顶栏 </label>
+								</div>
+
+								<!-- /section:settings.navbar -->
+
+								<!-- #section:settings.sidebar -->
+								<div class="ace-settings-item">
+									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
+									<label class="lbl" for="ace-settings-sidebar"> 冻结边栏</label>
+								</div>
+
+								<!-- /section:settings.sidebar -->
+
+								<!-- #section:settings.breadcrumbs -->
+								<div class="ace-settings-item">
+									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
+									<label class="lbl" for="ace-settings-breadcrumbs"> 冻结面包屑</label>
+								</div>
+
+								<!-- /section:settings.breadcrumbs -->
+
+								<!-- #section:settings.rtl -->
+								<!-- <div class="ace-settings-item">
+									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
+									<label class="lbl" for="ace-settings-rtl"> 边栏右对齐</label>
+								</div> -->
+
+								<!-- /section:settings.rtl -->
+
+								<!-- #section:settings.container -->
+								<div class="ace-settings-item">
+									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
+									<label class="lbl" for="ace-settings-add-container">
+										页面居中对齐
+									</label>
+								</div>
+
+								<!-- /section:settings.container -->
+							</div><!-- /.pull-left -->
+
+							<div class="pull-left width-50">
+								<!-- #section:basics/sidebar.options -->
+								<div class="ace-settings-item">
+									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-hover" />
+									<label class="lbl" for="ace-settings-hover">鼠标经过时弹出菜单</label>
+								</div>
+
+								<div class="ace-settings-item">
+									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-compact" />
+									<label class="lbl" for="ace-settings-compact">窄边栏</label>
+								</div>
+
+								<div class="ace-settings-item">
+									<input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-highlight" />
+									<label class="lbl" for="ace-settings-highlight">边栏菜单突出</label>
+								</div>
+
+								<!-- /section:basics/sidebar.options -->
+							</div><!-- /.pull-left -->
+						</div><!-- /.ace-settings-box -->
+					</div><!-- /.ace-settings-container -->
+
+					<!-- /section:settings.box -->
+					<div class="page-content-area">
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+								<h1 class="h1 title-line">Title</h1>
+								<!-- PAGE CONTENT ENDS -->
+							</div><!-- /.col -->
+							<div class="col-xs-12">
+								<p class="pb20">快捷操作：</p>
+								<a href="javascript:;" class="btn btn-info btn-lg">支付单查询</a>
+								<a href="javascript:;" class="btn btn-info btn-lg">支付单统计</a>
+								<a href="javascript:;" class="btn btn-info btn-lg">支付记录</a>
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.page-content-area -->
+				</div><!-- /.page-content -->
+			</div><!-- /.main-content -->
+
+			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+				<i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
+			</a>
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+		<script src="../static/plugins/ace/assets/js/ace-extra.min.js"></script>
+		<script src="../static/plugins/ace/assets/js/jquery.min.js"></script>
+		<script src="../static/plugins/ace/assets/js/bootstrap.min.js"></script>
+		<script src="../static/plugins/ace/assets/js/ace-elements.min.js"></script>
+		<script src="../static/plugins/ace/assets/js/ace.min.js"></script>
+		<script src="../static/public/js/jquery.x.min.js"></script>
+		<script src="../static/LezCashier/js/base.js"></script>
+		<script src="../static/LezCashier/js/baseAjax.js"></script>
+		<script src="../static/LezCashier/js/index.js"></script>
+		<script src="../static/LezCashier/js/indexAjax.js"></script>
+		<!-- <script src="http://10.1.15.50:8000/static/LezCashier/js/index.mod.js"></script> -->
+	</body>
+</html>

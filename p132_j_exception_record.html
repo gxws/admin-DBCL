@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <title>开通业务订单记录-点播齿轮</title>
+    <meta name="Author" content="jiqingjian">
+    <meta name="Keywords" content="jiqingjian">
+    <meta name="Description" content="jiqingjian">
+    <meta name="viewport" content="width=device-width,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />-->
+    <link rel="stylesheet" href="../static/plugins/ace/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/plugins/ace/assets/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/plugins/ace/assets/css/datepicker.css">
+    <link rel="stylesheet" href="../static/plugins/ace/assets/css/bootstrap-timepicker.css">
+    <link rel="stylesheet" href="../static/plugins/ace/assets/css/daterangepicker.css">
+    <link rel="stylesheet" href="../static/plugins/ace/assets/css/bootstrap-datetimepicker.css">
+    <link rel="stylesheet" href="../static/plugins/ace/assets/css/ace.min.css" id="main-ace-style">
+    <link rel="stylesheet" href="../static/public/css/public.css">
+    <link rel="stylesheet" href="static/css/base.css">
+    <!--link(rel="stylesheet" href="http://10.1.15.50:8000/static/LezCashier/css/index.mod.css")-->
+  </head>
+  <body class="no-skin">
+    <!--/#section:basics/navbar.layout-->
+    <div id="navbar" class="navbar navbar-default">
+      <!--<script type="text/javascript">try{ace.settings.check('navbar' , 'fixed')}catch(e){}</script>-->
+      <div id="navbar-container" class="navbar-container">
+        <!--#section:basics/sidebar.mobile.toggle 手机版导航菜单-->
+        <button id="menu-toggler" type="button" class="navbar-toggle menu-toggler pull-left"><span class="sr-only">Toggle sidebar</span></button><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        <!--/section:basics/sidebar.mobile.toggle-->
+        <div class="navbar-header pull-left"><a href="#" class="navbar-brand"><small>
+              <!--<i class="fa fa-leaf">-->点播齿轮 | 后台管理系统</small></a></div>
+      </div>
+      <!--#section:basics/navbar.dropdown-->
+      <div role="navigation" class="navbar-buttons navbar-header pull-right">
+        <ul class="nav ace-nav">
+          <!--#section:basics/navbar.user_menu 用户信息-->
+          <li class="light-blue"><a data-toggle="dropdown" href="#" class="dropdown-toggle"><img class="nav-user-photo" src="static/images/user.jpg" alt="管理员名字" /><span class="user-info">管理员</span><i class="ace-icon fa fa-caret-down"></i></a>
+            <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+              <li><a><i class="ace-icon fa fa-user"></i>权限组：管理员</a></li>
+              <li><a href="#"><i class="ace-icon fa fa-cog"></i>修改密码</a></li>
+              <li class="divider"></li>
+              <li><a href="#"><i class="ace-icon fa fa-power-off"></i>退出</a></li>
+            </ul>
+          </li>
+          <!--/section:basics/navbar.user_menu-->
+        </ul>
+      </div>
+      <!--/section:basics/navbar.dropdown-->
+    </div>
+    <div id="main-container" class="main-container">
+      <!--<script type="text/javascript">try{ace.settings.check('main-container' , 'fixed')}catch(e){}</script>-->
+      <div id="sidebar" class="sidebar responsive">
+        <!--<script type="text/javascript">try{ace.settings.check('sidebar' , 'fixed')}catch(e){}</script>-->
+        <ul class="nav nav-list">
+          <li><a href="javascript:;" class="dropdown-toggle"><i class="menu-icon fa fa-desktop"></i><span class="menu-text">订单和异常记录</span><b class="arrow fa fa-angle-down"></b></a><b class="arrow"></b>
+            <ul class="submenu">
+              <li><a href="#"><i class="menu-icon fa fa-caret-right"></i>开通业务订单记录</a><b class="arrow"></b></li>
+              <li><a href="#"><i class="menu-icon fa fa-caret-right"></i>计次点播订单记录</a><b class="arrow"></b></li>
+              <li><a href="#"><i class="menu-icon fa fa-caret-right"></i>一次性消费订单记录</a><b class="arrow"></b></li>
+              <li><a href="#"><i class="menu-icon fa fa-caret-right"></i>异常记录</a><b class="arrow"></b></li>
+            </ul>
+          </li>
+          <li><a href="javascript:;" class="dropdown-toggle"><i class="menu-icon fa fa-desktop"></i><span class="menu-text">对账</span><b class="arrow fa fa-angle-down"></b></a><b class="arrow"></b>
+            <ul class="submenu">
+              <li><a href="#"><i class="menu-icon fa fa-caret-right"></i>设置对账单发送地址</a><b class="arrow"></b></li>
+              <li><a href="#"><i class="menu-icon fa fa-caret-right"></i>对账单发送记录</a><b class="arrow"></b></li>
+            </ul>
+          </li>
+        </ul>
+        <!--/.nav-list-->
+        <!--#section:basics/sidebar.layout.minimize-->
+        <div id="sidebar-collapse" class="sidebar-toggle sidebar-collapse"><i data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right" class="ace-icon fa fa-angle-double-left"></i></div>
+        <!--/section:basics/sidebar.layout.minimize-->
+        <!--<script type="text/javascript">try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}</script>-->
+      </div>
+      <div class="main-content">
+        <!--#section:basics/content.breadcrumbs-->
+        <div id="breadcrumbs" class="breadcrumbs">
+          <!--<script type="text/javascript">try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}</script>-->
+          <ul class="breadcrumb">
+            <li><i class="ace-icon fa fa-home home-icon"></i><a href="#">首页</a></li>
+            <li><a href="#">系统</a></li>
+            <li><a href="#">分类</a></li>
+            <li class="active"><a href="#">当前页</a></li>
+          </ul>
+        </div>
+        <!--/section:basics/content.breadcrumbs-->
+        <div class="page-content">
+          <div id="ace-settings-container" class="ace-settings-container">
+            <div id="ace-settings-btn" class="btn btn-app btn-xs btn-warning ace-settings-btn"><i class="ace-icon fa fa-cog bigger-150"></i></div>
+            <div id="ace-settings-box" class="ace-settings-box clearfix">
+              <div class="pull-left width-50">
+                <div class="ace-settings-item">
+                  <input id="ace-settings-navbar" type="checkbox" class="ace ace-checkbox-2">
+                  <label for="ace-settings-navbar" class="lbl">冻结顶栏</label>
+                </div>
+                <div class="ace-settings-item">
+                  <input id="ace-settings-sidebar" type="checkbox" class="ace ace-checkbox-2">
+                  <label for="ace-settings-sidebar" class="lbl">冻结边栏</label>
+                </div>
+                <div class="ace-settings-item">
+                  <input id="ace-settings-breadcrumbs" type="checkbox" class="ace ace-checkbox-2">
+                  <label for="ace-settings-breadcrumbs" class="lbl">冻结面包屑</label>
+                </div>
+                <div class="ace-settings-item">
+                  <input id="ace-settings-container" type="checkbox" class="ace ace-checkbox-2">
+                  <label for="ace-settings-container" class="lbl">页面居中对齐</label>
+                </div>
+              </div>
+              <div class="pull-left width-50">
+                <div class="ace-settings-item">
+                  <input id="ace-settings-hover" type="checkbox" class="ace ace-checkbox-2">
+                  <label for="ace-settings-hover" class="lbl">鼠标经过时弹出菜单</label>
+                </div>
+                <div class="ace-settings-item">
+                  <input id="ace-settings-compact" type="checkbox" class="ace ace-checkbox-2">
+                  <label for="ace-settings-compact" class="lbl">窄边栏</label>
+                </div>
+                <div class="ace-settings-item">
+                  <input id="ace-settings-highlight" type="checkbox" class="ace ace-checkbox-2">
+                  <label for="ace-settings-highlight" class="lbl">边栏菜单突出</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="page-content-area">
+            <div class="row">
+              <div class="col-sm-12">
+                <!--PAGE CONTENT BEGINS-->
+                <div class="title-line clearfix"><span class="h1">Title</span><a href="#" class="btn btn-xs btn-info pull-right no-margin-right">导出当前记录</a></div>
+              </div>
+              <form action="" method="get" class="form-horizontal">
+                <div class="col-sm-12">
+                  <div class="clearfix form-actions no-margin-bottom">
+                    <div class="rw"><a href="#" class="btn btn-sm btn-info J_subBtn">全部状态</a><a href="#" class="btn btn-sm btn-white btn-info J_subBtn">待开通</a><a href="#" class="btn btn-sm btn-white btn-info J_subBtn">处理中</a><a href="#" class="btn btn-sm btn-white btn-info J_subBtn">开通成功</a><a href="#" class="btn btn-sm btn-white btn-info J_subBtn">开通失败</a>
+                    </div>
+                    <div class="rw"><a href="#" class="btn btn-sm btn-success J_subBtn">全部类型</a><a href="#" class="btn btn-sm btn-white btn-success J_subBtn">业务开通</a><a href="#" class="btn btn-sm btn-white btn-success J_subBtn">计次点播</a><a href="#" class="btn btn-sm btn-white btn-success J_subBtn">一次性消费</a>
+                    </div>
+                    <div class="col-sm-3 pb10 no-padding-left">
+                      <div class="input-group"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                        <input type="text" name="start" placeholder="选择时间" class="form-control J_date-pick">
+                      </div>
+                    </div>
+                    <div class="col-sm-6 pull-right no-padding">
+                      <div class="input-icon pull-left">
+                        <select name="" id="" class="form-control J_select">
+                          <option value="">订单编号</option>
+                          <option value="">机顶盒号</option>
+                          <option value="">订单名称</option>
+                        </select>
+                      </div>
+                      <div class="input-group">
+                        <input type="text" placeholder="输入订单编号" class="form-control search-query"><span class="input-group-btn">
+                          <button class="btn btn-info btn-sm no-margin-right J_search_btn">查询<i class="ace-icon fa fa-search icon-on-right"></i></button></span>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 no-padding-left green pb10 fs16"><b>充值成功金额合计：<span class="orange">6000.00</span>元</b></div>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <table class="table table-striped table-hover">
+                    <thead>
+                      <tr>
+                        <th class="text-center">异常编号</th>
+                        <th class="text-center">订单编号</th>
+                        <th class="text-center">机顶盒号</th>
+                        <th class="text-center">订单名称</th>
+                        <th class="text-center">订单金额（元）</th>
+                        <th class="text-center">类型</th>
+                        <th class="text-center">状态</th>
+                        <th class="text-center">创建时间</th>
+                        <th class="text-center">操作</th>
+                      </tr>
+                    </thead>
+                    <tbody class="text-center">
+                      <tr>
+                        <td><a href="#">123456789</a></td>
+                        <td><a href="#">00000000AK</a></td>
+                        <td>123456789</td>
+                        <td>{订单名称}</td>
+                        <td class="text-right">0.00</td>
+                        <td>业务开通</td>
+                        <td>待处理</td>
+                        <td>14-02-24 16:22:20</td>
+                        <td>
+                          <div class="action-buttons bigger-130"><a href="javascript:;" data-ajax="javascript:;" data-rel="tooltip" title="手动操作" class="orange J_operation"><i class="ace-icon fa fa-frown-o"></i></a></div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="col-sm-12">
+                  <ul class="pagination J_pagination">
+                    <li class="disabled"><a href="#" pageno="prev"><i class="ace-icon fa fa-angle-double-left"></i>上一页</a></li>
+                    <li class="active"><a href="#" pageno="1">1</a></li>
+                    <li><a href="#" pageno="2">2</a></li>
+                    <li><a href="#" pageno="3">3</a></li>
+                    <li><a href="#" pageno="4">4</a></li>
+                    <li><a href="#" pageno="5">5</a></li>
+                    <li><span>...</span></li>
+                    <li><a href="#" pageno="next"><i class="ace-icon fa fa-angle-double-right"></i>下一页</a></li>
+                    <li><span>16051条记录</span></li>
+                    <li><span class="no-border">1/<em class="J_pgmax">536</em>页跳到</span></li>
+                    <li>
+                      <input type="text" name="pageNO" class="col-xs-1 J_jupnb">
+                    </li>
+                    <li><span class="no-border">页</span></li>
+                    <li>
+                      <button type="submint" class="btn btn-sm btn-info J_jump"><span>确定</span></button>
+                    </li>
+                  </ul>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div><a id="btn-scroll-up" href="#" class="btn-scroll-up btn btn-sm btn-inverse"><i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i></a>
+    </div>
+    <script src="../static/plugins/ace/assets/js/ace-extra.min.js"></script>
+    <script src="../static/plugins/ace/assets/js/jquery.min.js"></script>
+    <script src="../static/plugins/ace/assets/js/bootstrap.min.js"></script>
+    <script src="../static/plugins/ace/assets/js/date-time/bootstrap-datepicker.min.js"></script>
+    <script src="../static/plugins/ace/assets/js/date-time/bootstrap-timepicker.min.js"></script>
+    <script src="../static/plugins/ace/assets/js/date-time/moment.min.js"></script>
+    <script src="../static/plugins/ace/assets/js/date-time/daterangepicker.min.js"></script>
+    <script src="../static/plugins/ace/assets/js/date-time/bootstrap-datetimepicker.min.js"></script>
+    <script src="../static/plugins/ace/assets/js/bootbox.min.js"></script>
+    <script src="../static/plugins/ace/assets/js/ace-elements.min.js"></script>
+    <script src="../static/plugins/ace/assets/js/ace.min.js"></script>
+    <script src="../static/public/js/jquery.x.min.js"></script>
+    <script src="static/js/base.js"></script>
+    <script src="static/js/baseAjax.js"></script>
+    <!--script(src="static/js/index.js")-->
+    <!--script(src="static/js/indexAjax.js")-->
+    <!--script(src="http://10.1.15.50:8000/static/LezCashier/js/index.mod.js")-->
+  </body>
+</html>
